@@ -1,9 +1,28 @@
-<li>
-	{{burger_name}}
+<div class="row burger p-2 m-0 justify-content-center">
+    <div class="col-sm-7 p-0 card">
+        {{id}}. {{burger_name}}
+    </div>
+    <div class="col-sm-4 p-0">
+        <button type="button" class="btn btn-info change-devour" data-id="{{id}}" data-newdevour="{{devour}}">
+            {{#if devour}}DEVOUR <i class="fas fa-hamburger"></i>{{else}}BACK TO LIST{{/if}}
+        </button>
+    </div>
 
-	<button class="change-devour" data-id="{{id}}" data-newdevour="{{devour}}">
-		{{#if devour}}DEVOUR!{{else}}UNDEVOUR!{{/if}}
-	</button>
+    {{!-- <button class="change-devour" data-id="{{id}}" data-newdevour="{{devour}}">
+        {{#if devour}}DEVOUR!<i class="fas fa-hamburger"></i>{{else}}UNDEVOUR!{{/if}}
+    </button> --}}
+    <div class="col-sm-1 p-0">
+        {{#if devour}}
+        <button type="button" class="btn btn-secondary delete-burger" data-id="{{this.id}}">
+            <i class="fas fa-trash-alt"></i>
+        </button>
+        {{!-- <button class="delete-burger" data-id="{{this.id}}">
+            <i class="fas fa-trash-alt"></i>
+        </button> --}}
+        {{/if}}
 
-	<button class="delete-burger" data-id="{{this.id}}">DELETE!</button>
-</li>
+        {{!-- <button class="delete-burger" data-id="{{this.id}}">
+        {{#if devour}}DELETE!{{/if}}
+    </button> --}}
+    </div>
+</div>

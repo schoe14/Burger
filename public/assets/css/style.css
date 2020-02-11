@@ -1,0 +1,53 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    padding: 0;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.header {
+    text-align: center;
+    font-family: 'Sriracha', cursive;
+}
+
+.burgersList {
+    font-family: 'Roboto Mono', monospace;
+    border: solid 1px #EDEDED;
+}
+
+.row, .col {
+    width: 100%;
+}
+
+.card {
+    height: 70px;
+    text-align: center;
+    padding: 5px 5px 20px 5px !important;
+}
+
+.btn-info, .btn-secondary, .i, .btn-secondary {
+    height: 100%;
+    width: 100%;
+    text-align: center;
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+form {
+    text-align: center;
+}
+
+#instruction {
+    margin: 20px;
+}
+
+@media only screen and (max-width: 992px) {
+    .btn {
+        font-size: small;
+        padding: 8px;
+    }
+}
