@@ -1,4 +1,14 @@
 $(function () {
+    console.log(!$.trim($('#left').html()).length); // test
+    if (!$.trim($('#left').html()).length) {
+        $("#placeholder1").css("display", "block");
+    }
+
+    console.log(!$.trim($('.text-muted').html()).length); // test
+    if (!$.trim($('.text-muted').html()).length) {
+        $("#placeholder2").css("display", "block");
+    }
+
     $(".change-devour").on("click", function (event) {
         const id = $(this).data("id");
         const newDevour = $(this).data("newdevour");
@@ -39,8 +49,13 @@ $(function () {
         // Make sure to preventDefault on a submit event.
         event.preventDefault();
         console.log($(this)); // test
+        let value = $("#burger_name").val().trim();
+        if (value.includes(" ")) {
+            value = value.split(" ").map(function (val) { return val.charAt(0).toUpperCase() + val.substring(1); }).join(" ");
+        } else { value = value.charAt(0).toUpperCase() + value.substring(1); }
+
         const newHamburger = {
-            burger_name: $("#burger_name").val().trim(),
+            burger_name: value,
             // devoured: $("[name=devoured]:checked").val().trim()
             devoured: 0
         };

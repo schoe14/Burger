@@ -1,29 +1,39 @@
-<div class="container fluid header my-3">
+<nav class="navbar justify-content-center header">
     <h1>Eat-Da-Burger!</h1>
-</div>
+</nav>
 
-<div class="container fluid burgersList my-3">
-    <div class="row justify-content-center mx-0 my-3">
-        <div class="col-sm-6 col-md-6 col-lg-5">
-            {{!-- <h2>Burgers not devoured</h2> --}}
-
-            {{#each burgers}}
-            {{#unless devoured}}
-            {{> burgers/burger-block devour=true}}
-            {{/unless}}
-            {{/each}}
-
+<div class="container fluid burgersList my-4">
+    <div class="row main justify-content-center mx-0 my-3">
+        <div class="col-sm-6 col-md-6 col-lg-5 py-2">
+            <div class="h3Header">
+                <h3>Ready to eat?</h3>
+            </div>
+            <div id="placeholder1" style="display: none;">
+                <p>Add your own burger!</p>
+            </div>
+            <div id="left">
+                {{#each burgers}}
+                {{#unless devoured}}
+                {{> burgers/burger-block devour=true}}
+                {{/unless}}
+                {{/each}}
+            </div>
         </div>
 
-        <div class="col-sm-6 col-md-6 col-lg-5 text-muted">
-            {{!-- <h2>Burgers devoured</h2> --}}
-
-            {{#each burgers}}
-            {{#if devoured}}
-            {{> burgers/burger-block devour=false}}
-            {{/if}}
-            {{/each}}
-
+        <div class="col-sm-6 col-md-6 col-lg-5 py-2">
+            <div class="h3Header">
+                <h3>Yum!</h3>
+            </div>
+            <div id="placeholder2" style="display: none;">
+                <p>No burgers have been eaten..</p>
+            </div>
+            <div class="text-muted">
+                {{#each burgers}}
+                {{#if devoured}}
+                {{> burgers/burger-block devour=false}}
+                {{/if}}
+                {{/each}}
+            </div>
         </div>
     </div>
 
@@ -32,7 +42,8 @@
 
             <div class="form-group">
                 {{!-- <label for="burger_name">Burger Name:</label> --}}
-                <textarea id="burger_name" name="burger_name" rows="4" cols="50"></textarea>
+                <textarea id="burger_name" name="burger_name" rows="3" cols="30"
+                    placeholder="Empty input not accepted"></textarea>
                 {{!-- <input type="text" id="burger_name" name="burger_name"> --}}
             </div>
 

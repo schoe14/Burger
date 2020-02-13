@@ -14,14 +14,19 @@ router.get("/", function (req, res) {
 });
 
 router.post("/api/burgers", function (req, res) {
-    burger.insertOne([
-        "burger_name", "devoured"
-    ], [
-        req.body.burger_name, req.body.devoured
-    ], function (result) {
-        // Send back the ID of the new quote
-        res.json({ id: result.insertId });
-    });
+    console.log("line17:" + req.body.burger_name); // test
+    if (req.body.burger_name == "") {
+        return res.status(404).end();
+    } else {
+        burger.insertOne([
+            "burger_name", "devoured"
+        ], [
+            req.body.burger_name, req.body.devoured
+        ], function (result) {
+            // Send back the ID of the new quote
+            res.json({ id: result.insertId });
+        });
+    }
 });
 
 router.put("/api/burgers/:id", function (req, res) {

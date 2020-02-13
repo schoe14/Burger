@@ -1,6 +1,18 @@
 body {
     margin: 0;
     padding: 0;
+    background-color: rgb(98,11,20);
+}
+
+img {
+    width: 200px;
+    height: auto;
+    background: rgb(98,11,20) transparent;
+}
+
+.imageHolder {
+    text-align: center;
+    background-color: rgb(98,11,20);
 }
 
 .container {
@@ -12,11 +24,34 @@ body {
 .header {
     text-align: center;
     font-family: 'Sriracha', cursive;
+    background-color: #f7b119;
+    color: #620b14;
 }
 
 .burgersList {
     font-family: 'Roboto Mono', monospace;
-    border: solid 1px #EDEDED;
+    border: solid 1px #f7b119;
+}
+
+h3 {
+    color: #f7b119;
+}
+
+.h3Header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#placeholder1, #placeholder2 {
+    color: #f7b119;
+    text-align: center;
+    border: sandybrown 1px dotted;
+    margin-top: 28px;
+    height: 200px;
+}
+
+#placeholder1 p, #placeholder2 p {
+    margin-top: 80px;
 }
 
 .row, .col {
@@ -24,25 +59,80 @@ body {
 }
 
 .card {
-    height: 70px;
+    height: fit-content;
     text-align: center;
     padding: 5px 5px 20px 5px !important;
+    background-color: rgb(116, 34, 42);
+    border: solid 1px #f7b119;
 }
 
-.btn-info, .btn-secondary, .i, .btn-secondary {
+.text-muted {
+    opacity: 0.8;
+}
+
+.burgerInfo {
+    color: #f7b119;
+}
+
+.btn-info, .btn-secondary, .i {
     height: 100%;
     width: 100%;
     text-align: center;
     padding: 0 !important;
     margin: 0 !important;
+    outline: none !important;
+    border: none;
+}
+
+.btn-info {
+    background-color: #f7b119;
+    color: #620b14;
+}
+
+.btn-info:hover, .btn-secondary:hover, .btn-info:active, .btn-info:focus, .btn-secondary:active, .btn-secondary:focus {
+    border-color: none !important;
+    background-color: #620b14 !important;
+    border: 1px solid sandybrown !important;
+}
+
+.btn-secondary {
+    opacity: 0.8;
+    color: sandybrown;
+}
+
+.btn-primary, .btn-primary:active, .btn-primary:focus {
+    background-color: #620b14;
+    color: #f7b119;
+    border: 2px solid sandybrown !important;
+}
+
+.btn-primary:hover {
+    background-color: #f7b119 !important;
+    color: #620b14;
+}
+
+.btn:focus, .btn:active, .btn:hover {
+    outline: none !important;
+    box-shadow: none !important;
 }
 
 form {
     text-align: center;
 }
 
+textarea, select, input, button {
+    outline: none;
+}
+
+#burger_name {
+    background-color: rgb(116, 34, 42);
+    border: solid 1px #f7b119;
+    color: #f7b119;
+}
+
 #instruction {
     margin: 20px;
+    color: #f7b119;
 }
 
 @media only screen and (max-width: 992px) {

@@ -1,10 +1,10 @@
 <div class="row burger p-2 m-0 justify-content-center">
     <div class="col-sm-7 p-0 card">
-        {{id}}. {{burger_name}}
+        <div class="burgerInfo">{{burger_name}}</div>
     </div>
     <div class="col-sm-4 p-0">
         <button type="button" class="btn btn-info change-devour" data-id="{{id}}" data-newdevour="{{devour}}">
-            {{#if devour}}DEVOUR <i class="fas fa-hamburger"></i>{{else}}BACK TO LIST{{/if}}
+            {{#if devour}}DEVOUR <i class="fas fa-hamburger"></i>{{else}}EAT AGAIN{{/if}}
         </button>
     </div>
 
