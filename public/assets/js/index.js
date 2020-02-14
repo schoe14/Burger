@@ -1,9 +1,9 @@
 $(function () {
+    // If no data through GET request, display placeholder div
     console.log(!$.trim($('#left').html()).length); // test
     if (!$.trim($('#left').html()).length) {
         $("#placeholder1").css("display", "block");
     }
-
     console.log(!$.trim($('.text-muted').html()).length); // test
     if (!$.trim($('.text-muted').html()).length) {
         $("#placeholder2").css("display", "block");
@@ -12,13 +12,10 @@ $(function () {
     $(".change-devour").on("click", function (event) {
         const id = $(this).data("id");
         const newDevour = $(this).data("newdevour");
-
         const newDevourState = {
             devoured: newDevour
         };
-
         console.log("new devourState: " + newDevourState); // test
-
         // Send the PUT request.
         $.ajax("/api/burgers/" + id, {
             type: "PUT",
@@ -31,9 +28,9 @@ $(function () {
             }
         );
     });
+
     $(".delete-burger").on("click", function (event) {
         const id = $(this).data("id");
-
         // Send the DELETE request.
         $.ajax("/api/burgers/" + id, {
             type: "DELETE",
@@ -45,18 +42,21 @@ $(function () {
             }
         );
     });
+
     $(".create-form").on("submit", function (event) {
-        // Make sure to preventDefault on a submit event.
+        // Make sure to preventDefault on a submit event
         event.preventDefault();
+
         console.log($(this)); // test
         let value = $("#burger_name").val().trim();
+
+        // Capitalize the first letter of each word from user input
         if (value.includes(" ")) {
             value = value.split(" ").map(function (val) { return val.charAt(0).toUpperCase() + val.substring(1); }).join(" ");
         } else { value = value.charAt(0).toUpperCase() + value.substring(1); }
 
         const newHamburger = {
             burger_name: value,
-            // devoured: $("[name=devoured]:checked").val().trim()
             devoured: 0
         };
 

@@ -16,6 +16,7 @@ router.get("/", function (req, res) {
 router.post("/api/burgers", function (req, res) {
     console.log("line17:" + req.body.burger_name); // test
     if (req.body.burger_name == "") {
+        // Empty input will not be saved and error message is sent
         return res.status(404).end();
     } else {
         burger.insertOne([
@@ -31,9 +32,7 @@ router.post("/api/burgers", function (req, res) {
 
 router.put("/api/burgers/:id", function (req, res) {
     const condition = "id = " + req.params.id;
-
     console.log("condition", condition); // test 
-
     burger.updateOne({
         devoured: req.body.devoured
     }, condition, function (result) {
@@ -48,7 +47,6 @@ router.put("/api/burgers/:id", function (req, res) {
 
 router.delete("/api/burgers/:id", function (req, res) {
     const condition = "id = " + req.params.id;
-
     burger.deleteOne(condition, function (result) {
         if (result.affectedRows == 0) {
             // If no rows were changed, then the ID must not exist, so 404

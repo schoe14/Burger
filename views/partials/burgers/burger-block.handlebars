@@ -2,27 +2,35 @@
     <div class="col-sm-7 p-0 card">
         <div class="burgerInfo">{{burger_name}}</div>
     </div>
-    <div class="col-sm-4 p-0">
+    {{!-- <div class="col-sm-4 p-0">
         <button type="button" class="btn btn-info change-devour" data-id="{{id}}" data-newdevour="{{devour}}">
             {{#if devour}}DEVOUR <i class="fas fa-hamburger"></i>{{else}}EAT AGAIN{{/if}}
         </button>
     </div>
-
-    {{!-- <button class="change-devour" data-id="{{id}}" data-newdevour="{{devour}}">
-        {{#if devour}}DEVOUR!<i class="fas fa-hamburger"></i>{{else}}UNDEVOUR!{{/if}}
-    </button> --}}
     <div class="col-sm-1 p-0">
         {{#if devour}}
         <button type="button" class="btn btn-secondary delete-burger" data-id="{{this.id}}">
             <i class="fas fa-trash-alt"></i>
         </button>
-        {{!-- <button class="delete-burger" data-id="{{this.id}}">
-            <i class="fas fa-trash-alt"></i>
-        </button> --}}
         {{/if}}
+    </div> --}}
 
-        {{!-- <button class="delete-burger" data-id="{{this.id}}">
-        {{#if devour}}DELETE!{{/if}}
-    </button> --}}
+    {{#if devour}}
+    <div class="col-sm-4 p-0">
+        <button type="button" class="btn btn-info change-devour" data-id="{{id}}" data-newdevour="{{devour}}">
+            DEVOUR <i class="fas fa-hamburger"></i>
+        </button>
     </div>
+    <div class="col-sm-1 p-0">
+        <button type="button" class="btn btn-secondary delete-burger" data-id="{{this.id}}">
+            <i class="fas fa-trash-alt"></i>
+        </button>
+    </div>
+    {{else}}
+    <div class="col-sm-5 p-0">
+        <button type="button" class="btn btn-info change-devour" data-id="{{id}}" data-newdevour="{{devour}}">
+            EAT AGAIN <i class="fas fa-utensils"></i>
+        </button>
+    </div>
+    {{/if}}
 </div>
